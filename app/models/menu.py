@@ -42,8 +42,8 @@ class Menu:
             ingredientes = dato.get('ingredientes')
             id_tipoPlato = dato.get('id_tipoPlato')
             cursor = conexMysql.connection.cursor()
-            cursor.execute("INSERT INTO comidas (nombre, precio, ingredientes) VALUES (%s, %s, %s)",
-                           (nombre, precio, ingredientes))
+            cursor.execute("INSERT INTO comidas (nombre, precio, ingredientes, id_tipoPlato) VALUES (%s, %s, %s, %s)",
+                           (nombre, precio, ingredientes, id_tipoPlato))
             conexMysql.connection.commit()
             cursor.close()
 
